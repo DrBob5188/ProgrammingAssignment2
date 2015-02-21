@@ -1,7 +1,7 @@
 ## This pair of functions aid in the reduction of expensive matrix calculations.
 ## makeCacheMatrix creates a 'cache matrix' encapsulating the matrix data type while
-## exposing functions to get/set the internal matrixand it's inverse.
-## The companion function cacheSolve takes advantage of the exposed function to retrieve
+## exposing functions to get/set the internal matrix and its inverse.
+## The companion function cacheSolve takes advantage of the exposed functions to retrieve
 ## the inverted matrix if present before performing the computationally expensive inversion.
 
 ## Encapsulates a matrix, adding helper functions to get/set the matrix and its inverse

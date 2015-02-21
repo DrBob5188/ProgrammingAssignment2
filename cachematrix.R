@@ -4,12 +4,14 @@
 ## The companion function cacheSolve takes advantage of the exposed functions to retrieve
 ## the inverted matrix if present before performing the computationally expensive inversion.
 
+
 ## Encapsulates a matrix, adding helper functions to get/set the matrix and its inverse
 ## Returns a list of function pointers
 ## Persists the original matrix and it's inverse (if set).
 
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
+    # define the 'cacheMatrix' helper functions
     set <- function(y) {
         x <<- y
         inv <<- NULL
@@ -17,6 +19,8 @@ makeCacheMatrix <- function(x = matrix()) {
     get <-function() x
     setinverse <- function(inverse) inv <<- inverse
     getinverse <- function() inv
+    
+    #return a list of pointers to our helper functions
     list(set = set, get = get,
          setinverse = setinverse,
          getinverse = getinverse)
@@ -38,3 +42,5 @@ cacheSolve <- function(x, ...) {
     x$setinverse(cachedinverse)
     cachedinverse
 }
+
+
